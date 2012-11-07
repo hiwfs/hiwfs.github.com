@@ -1,0 +1,144 @@
+<html>
+<head>
+	<title>浏览历史记录</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="master.css" type="text/css" rel="stylesheet" />
+	<script src=public.js></script>
+	<style type="text/css">
+		* {font-family: 微软雅黑,宋体; text-align:left;}
+		.day {margin-bottom: 30px}
+		.day .day_delete {float: right; text-decoration: underline; color: #0000FF; cursor: pointer;}
+		.day .day_title {font-weight: bold; font-size: small; background-color: #D2D2FF; margin-bottom: 10px;}
+		.day .day_content {padding-left: 30px}
+		.day .day_content .histroy_item .item_time { width:40px;}
+	</style>
+	<script type="text/javascript">
+		var week = new Array('星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六');
+		
+		function childByClass(o, classname){
+			var c;
+			for (c=o.firstChild; c; c=c.nextSibling) {
+				if (c.nodeType != 1) continue;
+				log('c.className:'+c.className, 'classname:'+classname);
+				if (c.className == classname)
+					return c;
+			}
+			return null;
+		}
+		
+		function delete_histroy(o){
+			if (confirm('你真的想删除当天的历史记录？')){
+				var xml = configDoc(); // 由于要修改XML，不能自己创建文档对象，要从配置管理器来获取对象，修改后可以通知管理器直接保存
+				alert(xml);
+				if (xml){
+					var dc = childByClass(o.parentElement, 'day_content');
+					if (!dc) return;
+					var item;
+					for (item=dc.firstChild; item; item=item.nextSibling){
+						var guid = item.guid;
+						var node = xml.selectSingleNode('/root/histroy/url[@guid="'+guid+'"]');
+						if (node) node.parentNode.removeChild(node);
+						// 还要删除缓存图片文件吗？
+					}
+					o.parentElement.outerHTML = '';
+					notifyConfigChanged();
+				}
+			}
+		}
+	</script>
+</head>
+<body oncontextmenu="event.returnValue=false" ondragstart="event.returnValue=false" onsource="event.returnValue=false">
+
+<div id="workarea">
+
+	<!--<div class="day">
+		<div class="day_delete" onclick="delete_histroy(this)">删除这天记录</div>
+		<div class="day_title">今天 - 星期四</div>
+		<div class="day_content">
+			<div class="histroy_item" guid="xxx">
+				<span class="item_time">11:20</span>
+				<a class=item_content href="http://www.google.com">Google</a>
+			</div>
+		</div>
+	</div>-->
+
+
+
+	<!--<div id="today0" class="day" style="margin-bottom: 30px">
+		<div class="day_delete">删除这天记录</div>
+		<div class="day_title">
+			昨天 - 星期四</div>
+		<div class="day_content">
+			<div class="histroy_item">
+				<span class="item_time">11:20</span>
+				<a class=item_content href="http://www.google.com">Google</a>
+			</div>
+		</div>
+	</div>-->
+
+</div>
+
+<!--<div id='debug'>
+	<script>
+		var d = new Date('03/20/2008 15:34:02');
+		d.setTime((new Date) - d); 
+		document.writeln('toDateString() = ' + d.toDateString());
+		document.writeln('toLocaleDateString() = ' + d.toLocaleDateString());
+		document.writeln('toLocaleString() = ' + d.toLocaleString());
+		document.writeln('toLocaleTimeString() = ' + d.toLocaleTimeString());
+		document.writeln('toString() = ' + d.toString());
+		document.writeln('toTimeString() = ' + d.toTimeString());
+		document.writeln('toUTCString() = ' + d.toUTCString());
+		document.writeln('getTime() = ' + d.getTime());
+		document.writeln('today - getTime() = ' + ((new Date).getTime()-d.getTime()));
+	</script>
+</div>-->
+
+</body>
+<script>
+window.setTimeout(function(){
+	var xml = new ActiveXObject("Msxml2.DOMDocument");
+	xml.async = false;
+	xml.load('res://' + path() + '\\jjbrowser.dat/xml/config.xml');
+	if (xml.parseError.errorCode == 0) {
+		var histroy = [];
+		var nodes = xml.selectNodes('/root/histroy/url');
+		var node;
+		while (node = nodes.nextNode())
+		{
+			histroy.push({name:node.getAttribute('name'),href:node.getAttribute('href'),lasttime:node.getAttribute('lasttime'),count:node.getAttribute('count'),guid:node.getAttribute('guid')});
+		}
+		histroy.sort(function(f,s){
+			var t1 = new Date(f.lasttime), t2 = new Date(s.lasttime);
+			return t1<t2 ? 1 : (t1>t2 ? -1 : 0); // 由大到小排
+		});
+		var eDay = null, oldDay = null;
+		if (histroy.length == 0)
+			$('workarea').innerText = '没有历史记录';
+		for (i=0; i<histroy.length; i++) {
+			var d = new Date(histroy[i].lasttime);
+			if (!eDay || !oldDay || !(oldDay.getFullYear()==d.getFullYear() && oldDay.getMonth()==d.getMonth() && oldDay.getDate()==d.getDate())){
+				oldDay = d;
+				var h = '<div class="day"><div class="day_delete" onclick="delete_histroy(this)">删除这天记录</div>';
+				h += '<div class="day_title"></div>';
+				h += '<div class="day_content"></div></div>';
+				$('workarea').insertAdjacentHTML('beforeEnd', h);
+				eDay = $('workarea').lastChild;
+//				eDay.outerHTML = h;
+				var preday = '';
+				var today = new Date();
+				if (today.getFullYear()==d.getFullYear() && today.getMonth()==d.getMonth() && today.getDate()==d.getDate()) preday = '今天 - ';
+				else if (today.getFullYear()==d.getFullYear() && today.getMonth()==d.getMonth() && today.getDate()-1==d.getDate()) preday = '昨天 - ';
+				childByClass(eDay,'day_title').innerText = preday + d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日 ' + week[d.getDay()];
+			}
+			var h = '<div class="histroy_item" guid="' + histroy[i].guid;
+			h += '"><span class="item_time">' + d.getHours() + ':' + d.getMinutes();
+			h += '</span><a class="item_content" href="' + histroy[i].href;
+			h += '">' + histroy[i].name;
+			h += '</a></div>';
+			childByClass(eDay, 'day_content').insertAdjacentHTML('beforeEnd', h);
+		}
+	}
+}, 0);
+</script>
+</html>

@@ -1,0 +1,205 @@
+﻿<html>
+<head>
+	<title>新标签</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="master.css" type="text/css" rel="stylesheet" />
+	<style type="text/css">
+		* {font-family: 微软雅黑,宋体;}
+		.top_null {display:none;}
+		.top {cursor: pointer;}
+		.top .top_cation { width:100%; overflow:hidden; text-decoration:underline; white-space:nowrap; color:Blue; }
+		.top .top_image {width:100%; height:expression(this.width*0.8);border: thin solid #C0C0C0;}
+	</style>
+	<script src=public.js></script>
+	<script language="javascript" type="text/javascript">
+		// <!CDATA[
+		var const_url_prompt = "键入网址";
+		
+		function input_url_onfocus() {
+			var u = $('input_url');
+			if (u.value == const_url_prompt) {
+				u.value = '';
+			}
+		}
+
+		function input_url_onblur() {
+			var u = $('input_url');
+			if (u.value == '')
+				u.value = const_url_prompt;
+		}
+
+		function input_url_onkeypress() {
+			if (event.keyCode==0xD) // Enter
+				go_onclick();
+		}
+
+		function go_onclick() {
+			var url = $('input_url').value;
+			if (url == const_url_prompt || url=='') {
+				alert('需要重新填写有效的网址');
+				$('input_url').focus();
+				return false;
+			}
+			if (url.indexOf(':') == -1)
+				url = 'http://' + url;
+			navigate(url);
+		}
+		
+		function top_nav(o) {
+			if (o.href)
+				navigate(o.href);
+		}
+
+		// ]]>
+	</script>
+</head>
+<body oncontextmenu="event.returnValue=false" ondragstart="event.returnValue=false" onsource="event.returnValue=false" onload="$('input_url').focus()" style="">
+
+
+
+	<table style="width:80%; text-align:left;">
+		<tr>
+			<td colspan="3" bgcolor="Linen">
+				<a href="product" style="float: right;">了解 Raptor 浏览器</a>
+				您正在使用 Raptor 浏览器，它将为您提供最简洁的互联网浏览体验。</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="font-size: small">
+				<hr />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="font-size: small">
+				<br />
+				我想浏览网址</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<div style="text-align: center">
+					<br />
+					<input id="input_url" 
+						style="border-style: solid; border-color: #FF8000; width: 80%" type="text" 
+						value="键入网址" onload="this.focus()" onfocus="return input_url_onfocus()" 
+						onblur="return input_url_onblur()" onkeypress="return input_url_onkeypress()" /><input 
+						id="go" type="button" value="看看去" onclick="return go_onclick()" /><br />
+					<br />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<hr />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<table style="width: 100%;">
+					<tr style="border-spacing: 10px">
+						<td width="70%" style="font-size: small">
+							最热门的网站</td>
+						<td>
+							&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							<table style="width: 100%; table-layout: fixed;" cellpadding="5" 
+								cellspacing="10">
+								<tr>
+									<td id='first_top'><div id="top1" class="top_null"></div></td>
+									<td><div id="top2" class="top_null"></div>
+										<!--<div id="top2" class="top" href='http://www.google.com' onclick='top_nav(this)'>
+											<div id="top2_caption" class="top_caption">
+												网站网站网站网站网站网站网站网站网站网站网站</div>
+											<img id="top2_image" class="top_image" src="file:///d:/work/download.png" />
+										</div>-->
+									</td>
+									<td><div id="top3" class="top_null"></div></td>
+								</tr>
+								<tr>
+									<td><div id="top4" class="top_null"></div></td>
+									<td><div id="top5" class="top_null"></div></td>
+									<td><div id="top6" class="top_null"></div></td>
+								</tr>
+								<tr>
+									<td><div id="top7" class="top_null"></div></td>
+									<td><div id="top8" class="top_null"></div></td>
+									<td><div id="top9" class="top_null"></div></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="histroy" style="font-size: smaller">查看所有历史记录...</a></td>
+						<td>
+							&nbsp;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="center" colspan="3">
+				<hr />
+			</td>
+		</tr>
+		<tr>
+			<td align="center" colspan="3" style="color: #808080">
+				版权所有©2008</td>
+		</tr>
+	</table>
+
+
+</body>
+<script>
+window.setTimeout(function(){
+	var xml = new ActiveXObject("Msxml2.DOMDocument");
+	xml.async = false;
+	xml.load('res://' + path() + '\\jjbrowser.dat/xml/config.xml');
+	log('errorCode:'+ xml.parseError.errorCode);
+	if (xml.parseError.errorCode == 0) {
+		log('parse succeed.');
+		var histroy = [];
+		var nodes = xml.selectNodes('/root/histroy/url');
+		var node;
+		while (node = nodes.nextNode())
+		{
+			log(node.getAttribute('name'));
+			histroy.push({name:node.getAttribute('name'),href:node.getAttribute('href'),lasttime:node.getAttribute('lasttime'),count:node.getAttribute('count'),guid:node.getAttribute('guid')});
+		}
+		histroy.sort(function(f,s){
+			return f.count<s.count ? 1 : (f.count>s.count ? -1 : 0); // 由大到小排
+		});
+		if (histroy.length == 0)
+			$('first_top').innerText = '(没有浏览记录)';
+		for (i=0; i<(histroy.length<=9?histroy.length:9); i++) {
+			var imgFile = path() + '\\cache\\' + histroy[i].guid + cacheExt();
+			var imgUrlFile = 'file:///' + urlpath() + '/cache/' + histroy[i].guid + cacheExt();
+			var html = '<div id="top' + (i+1);
+			html += '" class="top" href="' + histroy[i].href;
+			html += '" title="' + histroy[i].name + '&#13;' + histroy[i].href;
+			html += '" onclick="top_nav(this)"><div id="top' + (i+1);
+			html += '_caption" class="top_caption" style="text-decoration:underline;white-space:nowrap;color:Blue;">' + histroy[i].name;
+			html += '</div><img id="top' + (i+1);
+			html += '_image" class="top_image" ';
+			html += fileExist(imgFile) ? 'src="' + imgUrlFile : 'alt="(没有图像)';
+			html += '" /></div>';
+			
+			$('top'+(i+1)).outerHTML = html;
+		}
+	}
+}, 0);
+</script>
+</html>
