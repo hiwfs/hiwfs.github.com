@@ -6,7 +6,7 @@ ver_html=20121108000000
 ver_urlfilts=20121108000000
 
 # pe files
-url_pe=http://www.ieath.com/jjbrowser/jjbrowser.exe
+url_pe=http://www.ieath.com/jjbrowser/jjBrowser.exe
 # html files
 url_html=http://www.ieath.com/jjbrowser/inpages/histroy.htm
 url_html=http://www.ieath.com/jjbrowser/inpages/newtab.htm
