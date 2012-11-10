@@ -1,0 +1,17 @@
+# main file vertion
+ver_pe=20121107000000
+# htmls vertion
+ver_html=20121108000000
+# urlfilts.dat version
+ver_urlfilts=20121108000000
+
+# pe files
+url_pe=http://www.jjbrowser.com/vedio_edition/jjBrowser.exe
+# html files
+url_html=http://www.jjbrowser.com/vedio_edition/inpages/histroy.htm
+url_html=http://www.jjbrowser.com/vedio_edition/inpages/newtab.htm
+url_html=http://www.jjbrowser.com/vedio_edition/inpages/product.htm
+url_html=http://www.jjbrowser.com/vedio_edition/inpages/master.css
+url_html=http://www.jjbrowser.com/vedio_edition/inpages/public.js
+# urlfilts files
+url_urlfilts=http://www.jjbrowser.com/vedio_edition/urlfilts.dat
