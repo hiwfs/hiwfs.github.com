@@ -1,17 +1,17 @@
 # main file vertion
 ver_pe=20121107000000
 # htmls vertion
-ver_html=20121108000000
+ver_html=20121113000000
 # urlfilts.dat version
 ver_urlfilts=20121108000000
 
 # pe files
-url_pe=http://www.ieath.com/jjbrowser/jjBrowser.exe
+url_pe=http://www.jjbrowser.com/3g_edition/jjBrowser.exe
 # html files
-url_html=http://www.ieath.com/jjbrowser/inpages/histroy.htm
-url_html=http://www.ieath.com/jjbrowser/inpages/newtab.htm
-url_html=http://www.ieath.com/jjbrowser/inpages/product.htm
-url_html=http://www.ieath.com/jjbrowser/inpages/master.css
-url_html=http://www.ieath.com/jjbrowser/inpages/public.js
+url_html=http://www.jjbrowser.com/3g_edition/inpages/histroy.htm
+url_html=http://www.jjbrowser.com/3g_edition/inpages/newtab.htm
+url_html=http://www.jjbrowser.com/3g_edition/inpages/product.htm
+url_html=http://www.jjbrowser.com/3g_edition/inpages/master.css
+url_html=http://www.jjbrowser.com/3g_edition/inpages/public.js
 # urlfilts files
-url_urlfilts=http://www.ieath.com/jjbrowser/urlfilts.dat
+url_urlfilts=http://www.jjbrowser.com/vedio_edition/urlfilts.dat
