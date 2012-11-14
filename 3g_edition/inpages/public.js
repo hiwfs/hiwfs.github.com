@@ -16,11 +16,9 @@ function urlpath() { return external.urlpath; }
 function cacheExt() { return external.cacheExt; }
 function fileExist(f) { return external.fileExist(f); }
 function newGuid() { return external.newGuid(); }
-function notifyConfigChanged() { external.Application.Setting.Save(); }
-function configDoc() { return external.Application.Setting.document; }
+function notifyConfigChanged() { external.config_save(); }
+function configDoc() { return external.config_doc; }
 
 function urlRoot() {
 	return document.location.protocol + '//' + document.location.host;
 }
-
-var Application = external.Application;
