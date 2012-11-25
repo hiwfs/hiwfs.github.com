@@ -1,5 +1,5 @@
 # main file vertion  
-ver_pe=20121115000000
+ver_pe=1.0.0.1
 # htmls vertion
 ver_html=20121115000000
 # urlfilts.dat version
@@ -8,7 +8,7 @@ ver_urlfilts=20121115000000
 ver_ffcore=
 
 # pe files
-url_pe=http://www.jjbrowser.com/ffssh_ed/jjBrowser.exe
+url_pe=http://www.jjbrowser.com/ffssh_ed/jjfirefox.exe
 # html files
 url_html=http://www.jjbrowser.com/ffssh_ed/inpages/histroy.htm
 url_html=http://www.jjbrowser.com/ffssh_ed/inpages/newtab.htm
