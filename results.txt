@@ -1,14 +1,0 @@
-SignTool Error: File not found: C:\Inetpub\ftproot\LocalUser\xiaochen.wfs\*.exe
-SignTool Error: File not found: C:\Inetpub\ftproot\LocalUser\xiaochen.wfs\*.dll
-
-The following certificate was selected:
-    Issued to: TaoBao(china) Software Co., Ltd
-    Issued by: VeriSign Class 3 Code Signing 2010 CA
-    Expires:   2014-6-23 7:59:59
-    SHA1 hash: 1B1D4D8444EB54B17CB5B999A50E1D0C0ED1BFE2
-
-Done Adding Additional Store
-
-Number of files successfully Signed: 0
-Number of warnings: 0
-Number of errors: 2
