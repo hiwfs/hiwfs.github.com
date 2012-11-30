@@ -10,6 +10,37 @@ ver_ffcore=
 # pe files
 url_pe=http://www.jjbrowser.com/ffssh_ed/jjfirefox.exe
 # html files
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/jquery-1.6.1.min.js
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/script.js
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/style.css
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/1.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/2.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/3.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/4.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/5.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/6.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/7.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/8.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/9.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/10.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/11.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/12.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/yahoo-hover.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/yahoo.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/bing-hover.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/bing.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/google-hover.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/google.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/search-hover.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/search.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/search-hover.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/search.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/arrow-hover.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/arrow-back.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/arrow.png
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/net-back.png
+
 url_html=http://www.jjbrowser.com/ffssh_ed/inpages/newtab.htm
+
 # urlfilts files
 url_urlfilts=http://www.jjbrowser.com/ffssh_ed/vedio_ad_block.js
