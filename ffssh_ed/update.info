@@ -1,7 +1,7 @@
 # main file vertion  
-ver_pe=1.7.0.0
+ver_pe=1.8.0.0
 # htmls vertion
-ver_html=20121204000000
+ver_html=20121213000000
 # urlfilts.dat version
 ver_urlfilts=20121115000000
 # ffcore version
@@ -10,6 +10,8 @@ ver_ffcore=
 # pe files
 url_pe=http://www.jjbrowser.com/ffssh_ed/jjfirefox.exe
 # html files
+url_html=http://www.jjbrowser.com/ffssh_ed/inpages/startpage.htm
+
 url_html=http://www.jjbrowser.com/ffssh_ed/inpages/jquery-1.6.1.min.js
 url_html=http://www.jjbrowser.com/ffssh_ed/inpages/script.js
 url_html=http://www.jjbrowser.com/ffssh_ed/inpages/style.css
