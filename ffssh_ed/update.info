@@ -3,7 +3,7 @@ ver_pe=1.10.0.0
 # htmls vertion
 ver_html=20121213000000
 # urlfilts.dat version
-ver_urlfilts=20121115000000
+ver_urlfilts=20121218000000
 # ffcore version
 ver_ffcore=
 
@@ -153,4 +153,5 @@ url_html=http://www.jjbrowser.com/ffssh_ed/inpages/ziyuanhai.png
 url_html=http://www.jjbrowser.com/ffssh_ed/inpages/newtab.htm
 
 # urlfilts files
+url_urlfilts=http://www.jjbrowser.com/ffssh_ed/inpages/startpage.htm
 url_urlfilts=http://www.jjbrowser.com/ffssh_ed/vedio_ad_block.js
