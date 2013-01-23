@@ -1,4 +1,2 @@
-showname  : servername : port: sshkey
-showname1  : 11111 : port : sshkey
-showname2 : 22222 : port : sshkey
-showname3  : 33333 : port:  sshkey
+offishel_no_ssl  : s2.fanqiang.us : 22: 
+offishel_ssl  : 98.126.79.34 : 2222:  dont_touch_zZ
