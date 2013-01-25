@@ -1,11 +1,13 @@
 # main file vertion  
-ver_pe=2.0.0.0
+ver_pe=2.0.1.0
 # htmls vertion
 ver_html=20121213000000
 # urlfilts.dat version
 ver_urlfilts=20121218000000
 # ffcore version
 ver_ffcore=
+# sinfo version
+ver_sinfo==20121218000000
 
 # pe files
 url_pe=http://www.jjbrowser.com/ffssh_vip/jjfirefox.exe
