@@ -7,7 +7,7 @@ ver_urlfilts=20130202000000
 # ffcore version
 ver_ffcore=
 # sinfo version
-ver_sinfo==20121218000000
+ver_sinfo==20130316000000
 
 # pe files
 url_pe=http://www.jjbrowser.com/ffssh_vip/jjfirefox.exe
